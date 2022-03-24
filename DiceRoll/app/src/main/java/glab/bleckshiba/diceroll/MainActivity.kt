@@ -44,13 +44,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
-        when (dice1.roll()) {
-            1 -> dice1Value = R.drawable.dice_1
-            2 -> dice1Value = R.drawable.dice_2
-            3 -> dice1Value = R.drawable.dice_3
-            4 -> dice1Value = R.drawable.dice_4
-            5 -> dice1Value = R.drawable.dice_5
-            6 -> dice1Value = R.drawable.dice_6
+        dice1Value = when (dice1.roll()) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            6 -> R.drawable.dice_6
+            else -> R.drawable.dice_6
         }
         dice2.roll()
         dice3.roll()
