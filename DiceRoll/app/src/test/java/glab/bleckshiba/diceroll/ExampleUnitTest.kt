@@ -1,5 +1,6 @@
 package glab.bleckshiba.diceroll
 
+import glab.bleckshiba.diceroll.models.Dice
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -11,7 +12,17 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun generateNumber() {
+        val dice1 = Dice()
+        val dice2 = Dice(8)
+        val dice3 = Dice(12)
+
+        val rollResult1: Int = dice1.roll()
+        val rollResult2: Int = dice2.roll()
+        val rollResult3: Int = dice3.roll()
+
+        assert(rollResult1 in 1..6)
+        assert(rollResult2 in 1..8)
+        assert(rollResult3 in 1..12)
     }
 }
